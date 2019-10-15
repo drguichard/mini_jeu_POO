@@ -32,15 +32,12 @@ while user.life_points >0 && (player1.life_points > 0 || player2.life_points >0)
   puts "appuie sur 'Entrée' pour continuer "
   pause = gets.chomp
   puts "Les autres joueurs t'attaquent !"
-    enemies.each do |enemy|
-      if enemy.life_points >= 0 then enemy.attacks(user)
-      elsif enemy.life_points <= 0 then puts "Tu as tromphé !!!"
-      elsif user.life_points <= 0 then puts "Tu as perdu"
-    break if user.life_points <= 0 || enemy.life_points <= 0 #on casse la boucle à ces conditions
+   enemies.each do |enemy|
+      if enemy.life_points > 0 then enemy.attacks(user)
+        break if user.life_points <= 0 || player1.life_points <= 0 || player2.life_points <+ 0 #on casse la boucle à ces conditions
       end
   end
 end
-
 #Le jeu doit afficher "La partie est finie" et ensuite soit afficher "BRAVO ! TU AS GAGNE !" si le joueur humain est toujours en vie, ou "Loser ! Tu as perdu !" s'il est mort.
 
 binding.pry

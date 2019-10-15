@@ -56,14 +56,13 @@ attr_accessor :weapon_level
     puts "Tu as trouvé une arme de niveau #{found_weapon_level}"
     if found_weapon_level > weapon_level
       puts "Youhou ! elle est meilleure que ton arme actuelle : tu la prends."
-      return weapon_level = found_weapon_level
+      return @weapon_level = found_weapon_level
     else puts "M@*#$... elle n'est pas mieux cette arme"
     end
   end
 
   def search_health_pack
     healthpack = rand(1..6)
-    puts "le dé à tiré #{healthpack}"
     if healthpack == 1
       puts "Tu n'as rien trouvé... "
     elsif healthpack == 2 || 3 || 4 || 5
