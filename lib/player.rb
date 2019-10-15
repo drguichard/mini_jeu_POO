@@ -28,6 +28,57 @@ class Player
     return rand(1..6)
   end
 
+end
+
+
+
+class HumanPlayer < Player
+attr_accessor :weapon_level
+
+  def initialize(player_name)
+    @name = player_name
+    @life_points = 100
+    @weapon_level = 1
+    #super(name) #fait théoriquement appel au initialize de la classe Player mais marche pas...
+  end
+
+  def show_state
+    return "#{@name} a #{@life_points} points de vie et une arme de niveau #{@weapon_level}"
+  end
+
+  def compute_damage
+    rand(1..6) * @weapon_level
+  end
+
+  def search_weapon
+    dice = rand(1..6)
+    found_weapon_level = dice
+    puts "Tu as trouvé une arme de niveau #{found_weapon_level}"
+    if found_weapon_level > weapon_level
+      puts "Youhou ! elle est meilleure que ton arme actuelle : tu la prends."
+      return weapon_level = found_weapon_level
+    else puts "M@*#$... elle n'est pas mieux cette arme"
+    end
+  end
+
+  def search_health_pack
+    healthpack = rand(1..6)
+    puts "le dé à tiré #{healthpack}"
+    if healthpack == 1
+      puts "Tu n'as rien trouvé... "
+    elsif healthpack == 2 || 3 || 4 || 5
+      puts "Bravo, tu as trouvé un pack de +50 points de vie !"
+      return @life_points += 50
+    else
+      puts "Bravo, tu as trouvé un pack de +80 points de vie !!!"
+      return @life_points += 80
+    end
+
+    if @life_points > 100
+      return @life_points == 100
+    end
+
+  end
 
 
 end
