@@ -1,5 +1,6 @@
-# mini_jeu_POO : Version 1.0 : coder un combat entre 2 joueurs
+# mini_jeu_POO : 
 
+Version 1.0 : coder un combat entre 2 joueurs
 scénario:
 2 joueurs ;
 Que chaque joueur ait un niveau de vie donné ;
@@ -38,3 +39,8 @@ il lui inflige 1 points de dommages
 José attaque Josiane
 il lui inflige 6 points de dommages
 le joueur Josiane a été tué !
+
+Version 2.0 : créer un nouveau type de joueur
+humain contre deux machines
+trouver une arme possible pour humain avec un niveau propre
+trouver différents types de healthpack
